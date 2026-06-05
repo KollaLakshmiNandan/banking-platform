@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Build') {
+            steps {
+                echo 'Building Banking Application'
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -t banking-app:v1 app/'
+            }
+        }
+    }
+}
